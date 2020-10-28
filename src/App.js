@@ -1,12 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { createGlobalStyle } from 'styled-components';
+import { SearchOptionStore } from './context/SearchOptionContext';
 import Home from './pages/Home';
 import Menu from './components/home/Menu';
 import Recipes from './pages/Recipes';
-import { createGlobalStyle } from 'styled-components';
+import RecipeInfo from './pages/RecipeInfo';
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100&display=swap');
   *,
   *::before,
   *::after {
@@ -17,18 +18,30 @@ const GlobalStyle = createGlobalStyle`
     margin : 0;
     font-family: 'Heebo', sans-serif;
     color : #262626;
+
+    ul,li{
+      list-style: none;
+    }
+
+    a{
+      text-decoration: none;
+    }
   }
-  a{
-    text-decoration: none;
-  }
+  
 `;
+
 function App() {
   return (
     <BrowserRouter>
       <GlobalStyle />
-      <Menu />
-      <Route exact path='/' component={Home} />
-      <Route path='/recipes' component={Recipes} />
+      <SearchOptionStore>
+        <Menu />
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/recipes' component={Recipes} />
+          <Route path='/recipeinfo' component={RecipeInfo} />
+        </Switch>
+      </SearchOptionStore>
     </BrowserRouter>
   );
 }

@@ -1,17 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Menu = () => {
   return (
     <MENU>
-      <Link to='/'>
+      <NavLink to='/'>
         <div className='logo'>Logo</div>
-      </Link>
+      </NavLink>
       <div className='menu'>
-        <Link to='/recipes'>
+        <NavLink to='/recipes'>
           <div>Recipes</div>
-        </Link>
+        </NavLink>
         <div>ingredients</div>
         <div>Login</div>
       </div>

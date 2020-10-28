@@ -1,6 +1,7 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const Recipes = () => {
+const Recipes = ({ recipeName }) => {
   return <div>Recipes</div>;
 };
 

@@ -18,7 +18,7 @@ const HOME = styled.div`
   height: 100vh;
   display: grid;
   grid-template-columns: 60% 40%;
-  grid-template-rows: 75% 25%;
+  grid-template-rows: 70% 30%;
   grid-template-areas:
     ' search img '
     ' menu img ';
